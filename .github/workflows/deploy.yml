@@ -32,7 +32,7 @@ jobs:
         run: rm -f .terraform.lock.hcl
 
       - name: Initialize Terraform
-        run: terraform init -upgrade
+        run: terraform init -reconfigure 
 
       - name: Save Workspace as Artifact
         uses: actions/upload-artifact@v4
@@ -59,7 +59,7 @@ jobs:
         run: rm -f .terraform.lock.hcl
 
       - name: Initialize Terraform
-        run: terraform init -upgrade
+        run: terraform init 
 
       - name: Terraform Validate
         run: terraform validate
@@ -83,7 +83,7 @@ jobs:
         run: rm -f .terraform.lock.hcl
 
       - name: Initialize Terraform
-        run: terraform init -upgrade
+        run: terraform init 
 
       - name: Terraform Plan
         run: terraform plan -out=tfplan
@@ -114,7 +114,7 @@ jobs:
         run: rm -f .terraform.lock.hcl
 
       - name: Initialize Terraform
-        run: terraform init -upgrade
+        run: terraform init 
 
       - name: Apply Terraform Plan
         run: terraform apply -auto-approve tfplan

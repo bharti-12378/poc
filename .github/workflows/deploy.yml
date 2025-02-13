@@ -17,8 +17,7 @@ jobs:
   setup:
     name: Setup Terraform
     runs-on: ubuntu-latest
-    outputs:
-      cache-key: ${{ steps.cache.outputs.cache-hit }}
+    
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
